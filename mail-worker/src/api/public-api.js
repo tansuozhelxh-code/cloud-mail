@@ -12,6 +12,12 @@ app.post('/public/genToken', async (c) => {
 	return c.json(result.ok(data));
 });
 
+app.post('/public/genToken2', async (c) => {
+	const data = await publicService.genToken(c, await c.req.json());
+	return c.json(result.ok(data));
+});
+
+
 app.post('/public/emailList', async (c) => {
 	const list = await publicService.emailList(c, await c.req.json());
 	return c.json(result.ok(list));
